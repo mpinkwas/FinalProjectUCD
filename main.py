@@ -1,9 +1,8 @@
 # This is my final project on the rising house prices in Ireland
-import numpy as np
-pip.np
-
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def print_hi(name):
