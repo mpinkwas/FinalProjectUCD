@@ -3,6 +3,7 @@
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import numpy as np
 import matplotlib.pyplot as plt
+import pip as pip
 
 
 def print_hi(name):
