@@ -1,5 +1,5 @@
 # This is my final project on house prices in Ireland from the years 2017, 2018 and 2019
-import con as con
+import sql_connectors as con
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
@@ -34,9 +34,9 @@ engine_3 = create_engine('sqlite:///PPR-2019-Dublin.csv')
 con_1 = engine_1.connect
 con_2 = engine_2.connect
 con_3 = engine_3.connect
-rs_1 = con.execute("SELECT * FROM Date of Sale (dd/mm/yyyy)")
-rs_2 = con.execute("SELECT * FROM Date of Sale (dd/mm/yyyy)")
-rs_3 = con.execute("SELECT * FROM Date of Sale (dd/mm/yyyy)")
+
+
+
 
 
 
