@@ -8,6 +8,8 @@ import numpy as np
 from sqlalchemy import create_engine
 import seaborn as sns
 import csv
+
+
 #importing CSV dataset (downloaded from kaggle)
 df = pd.read_csv('./content/country_vaccinations_by_manufacturer.csv')
 print(df)
@@ -25,6 +27,13 @@ print (check_for_nan)
 #Checking for duplicates -- none found
 check_for_dup = df.duplicated().values.any()
 print(check_for_dup)
+
+# Focusing in on Ireland's vaccinations
+df_irealnd = np.array(df[3552:3633])
+print(df_irealnd)
+
+
+
 
 
 
