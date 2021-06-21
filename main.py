@@ -1,5 +1,7 @@
 # This is my final project on the number of vaccinations per country by vaccine manufacturers.
 import certifi
+import jupyterlab as jupyterlab
+import seaborn
 import sql_connectors as con
 import pandas as pd
 import requests
@@ -56,12 +58,17 @@ response = requests.post(url=URL, data=json.dumps(payload))
 df_api = pd.DataFrame.from_dict(json.loads(response.text))
 print(df_api)
 
-import matplotlib as plt
-import seaborn as sns
 
+import seaborn as sns
+import jupyterlab as jpl
+import ssl
+import matplotlib.pyplot as plt
+import numpy as np
+fig,ax = plt.subplots()
+plt.show()
 sns.set_theme(style="whitegrid")
 
-penguins = sns.load_dataset("country_by_vaccinations_by_manufacturer")
+covid_vaccinations = sns.load_dataset("country_by_vaccinations_by_manufacturer")
 
 # Draw a vaccination barplot by manufaturer and total numbers vaccinated
 g = sns.catplot(
@@ -72,7 +79,9 @@ g = sns.catplot(
 g.despine(left=True)
 g.set_axis_labels("Total numbers Vaccinated", "Vaccine Developer")
 g.legend.set_title("USA vs Ireland Vaccination")
+ssl._create_default_https_context = ssl._create_unverified_context
+tips = sns.load_dataset("tips")
 
-pip install certifi
-verify = false
+
+
 
