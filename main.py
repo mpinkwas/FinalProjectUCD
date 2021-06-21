@@ -13,6 +13,18 @@ import seaborn as sns
 import csv
 import pip
 # importing CSV dataset (downloaded from kaggle)
+import ssl
+import requests
+import json
+import seaborn as sns
+import jupyterlab as jpl
+import ssl
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
 df = pd.read_csv('./content/country_vaccinations_by_manufacturer.csv')
 print(df)
 
@@ -46,8 +58,6 @@ print(df_irealnd)
 df_usa = np.array(df[6679:7084])
 print(df_usa)
 
-import requests
-import json
 
 # Ireland covid cases 2019-2020 to API
 payload = {'code': 'IE'}
@@ -59,29 +69,12 @@ df_api = pd.DataFrame.from_dict(json.loads(response.text))
 print(df_api)
 
 
-import seaborn as sns
-import jupyterlab as jpl
-import ssl
-import matplotlib.pyplot as plt
-import numpy as np
+
 fig,ax = plt.subplots()
-plt.show()
 sns.set_theme(style="whitegrid")
 
-covid_vaccinations = sns.load_dataset("country_by_vaccinations_by_manufacturer")
-
-# Draw a vaccination barplot by manufaturer and total numbers vaccinated
-g = sns.catplot(
-    data='', kind="bar",
-    x="vaccine", y="total_vaccinations", hue="Ireland, United States",
-    ci="sd", palette="dark", alpha=.6, height=6
-)
-g.despine(left=True)
-g.set_axis_labels("Total numbers Vaccinated", "Vaccine Developer")
-g.legend.set_title("USA vs Ireland Vaccination")
-ssl._create_default_https_context = ssl._create_unverified_context
-tips = sns.load_dataset("tips")
-
+ax = sns.barplot(x="total_vaccinations", y="vaccine", data=Ireland)
+plt.show()
 
 
 
