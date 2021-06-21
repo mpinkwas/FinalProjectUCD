@@ -5,7 +5,7 @@ import pandas as pd
 import requests
 from pandas import read_csv
 import numpy as np
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, engine
 import seaborn as sns
 import csv
 
@@ -32,7 +32,19 @@ print(check_for_dup)
 df_irealnd = np.array(df[3552:3633])
 print(df_irealnd)
 
-df_irealnd_vaccanation = usecols, "total_vaccinations"
+import requests
+import json
+
+# Ireland cases to API
+payload = {'code': 'IE'}
+URL = 'https://api.statworx.com/covid'
+response = requests.post(url=URL, data=json.dumps(payload))
+
+# Convert to data frame
+df_api = pd.DataFrame.from_dict(json.loads(response.text))
+print(df_api)
+
+
 
 
 
