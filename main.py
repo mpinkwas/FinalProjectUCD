@@ -32,6 +32,8 @@ print(check_for_dup)
 df_irealnd = np.array(df[3552:3633])
 print(df_irealnd)
 
+df_irealnd_vaccanation = usecols, "total_vaccinations"
+
 
 
 
