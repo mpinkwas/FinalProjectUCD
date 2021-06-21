@@ -19,6 +19,14 @@ print(mean)
 median = np.median(df['total_vaccinations'])
 print(median)
 
+#Checking for NaN in df -- none found
+check_for_nan = df.isnull().values.any()
+print (check_for_nan)
+
+#Checking for duplicates -- none found
+check_for_dup = df.duplicated().values.any()
+print(check_for_dup)
+
 #List of Ireland and USA
 Ireland = (df[3552:3633])
 print(Ireland)
@@ -28,14 +36,6 @@ print(USA)
 #Iloc of Ireland and USA
 print(df.iloc[3552:3633, 2:3])
 print(df.iloc[6679:7084, 2:3])
-
-#Checking for NaN in df -- none found
-check_for_nan = df.isnull().values.any()
-print (check_for_nan)
-
-#Checking for duplicates -- none found
-check_for_dup = df.duplicated().values.any()
-print(check_for_dup)
 
 # Focusing in on Ireland's vaccinations
 df_irealnd = np.array(df[3552:3633])
