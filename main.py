@@ -8,9 +8,10 @@ import numpy as np
 from sqlalchemy import create_engine
 import seaborn as sns
 import csv
-#
+#importing CSV dataset (downloaded from kaggle)
 df = pd.read_csv('./content/country_vaccinations_by_manufacturer.csv')
 print(df)
+
 #Finding mean and median of total vaccinations in whole data set
 mean = np.mean(df['total_vaccinations'])
 print(mean)
