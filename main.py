@@ -42,8 +42,6 @@ result = pd.merge(Ireland,
                  on='vaccine')
 result.head()
 
-
-
 # Iloc of Ireland and USA
 print(df.iloc[3552:3633, 2:3])
 print(df.iloc[6679:7084, 2:3])
