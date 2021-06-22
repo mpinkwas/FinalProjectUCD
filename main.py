@@ -12,19 +12,16 @@ from sqlalchemy import create_engine, engine, false
 import seaborn as sns
 import csv
 import pip
-# importing CSV dataset (downloaded from kaggle)
 import ssl
 import requests
 import json
 import seaborn as sns
-import jupyterlab as jpl
 import ssl
 import matplotlib.pyplot as plt
 import numpy as np
-
-
 ssl._create_default_https_context = ssl._create_unverified_context
 
+# importing CSV dataset (downloaded from kaggle)
 df = pd.read_csv('./content/country_vaccinations_by_manufacturer.csv')
 print(df)
 
@@ -53,8 +50,8 @@ print(df.iloc[3552:3633, 2:3])
 print(df.iloc[6679:7084, 2:3])
 
 # Focusing in on Ireland's and United State's vaccinations
-df_irealnd = np.array(df[3552:3633])
-print(df_irealnd)
+df_ireland = np.array(df[3552:3633])
+print(df_ireland)
 df_usa = np.array(df[6679:7084])
 print(df_usa)
 
@@ -69,13 +66,14 @@ df_api = pd.DataFrame.from_dict(json.loads(response.text))
 print(df_api)
 
 
-
+#Bar graph added for Ireland data
 fig,ax = plt.subplots()
 sns.set_theme(style="whitegrid")
 
 ax = sns.barplot(x="total_vaccinations", y="vaccine", data=Ireland)
 plt.show()
 
+#Bar graph added for USA data
 fig,ax = plt.subplots()
 sns.set_theme(style="whitegrid")
 
