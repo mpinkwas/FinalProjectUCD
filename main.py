@@ -1,18 +1,5 @@
 # This is my final project on the number of vaccinations per country by vaccine manufacturers.
-import certifi
-import jupyterlab as jupyterlab
-import seaborn
-import sql_connectors as con
 import pandas as pd
-import requests
-from pandas import read_csv
-import numpy as np
-from pip._internal.operations import install
-from sqlalchemy import create_engine, engine, false
-import seaborn as sns
-import csv
-import pip
-import ssl
 import requests
 import json
 import seaborn as sns
