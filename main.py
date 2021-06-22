@@ -28,7 +28,7 @@ print(check_for_dup)
 
 # looping through all data
 for index, row in df.iterrows():
-    print(index, ': ', row['location'], 'has', row['vaccine'], 'total_vaccinations.')
+    print(index, ': ', row['location'], 'has', row['total_vaccinations'])
 
 # List of Ireland and USA
 Ireland = (df[3552:3633])
