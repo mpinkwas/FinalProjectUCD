@@ -76,5 +76,9 @@ sns.set_theme(style="whitegrid")
 ax = sns.barplot(x="total_vaccinations", y="vaccine", data=Ireland)
 plt.show()
 
+fig,ax = plt.subplots()
+sns.set_theme(style="whitegrid")
 
+ax = sns.barplot(x="total_vaccinations", y="vaccine", data=USA)
+plt.show()
 
