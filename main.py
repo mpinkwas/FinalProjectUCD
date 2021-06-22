@@ -26,6 +26,10 @@ print(check_for_nan)
 check_for_dup = df.duplicated().values.any()
 print(check_for_dup)
 
+# looping through all data
+for index, row in df.iterrows():
+    print(index, ': ', row['location'], 'has', row['vaccine'], 'total_vaccinations.')
+
 # List of Ireland and USA
 Ireland = (df[3552:3633])
 print(Ireland)
