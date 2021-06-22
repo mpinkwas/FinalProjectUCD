@@ -45,6 +45,14 @@ print(Ireland)
 USA = (df[6679:7084])
 print(USA)
 
+# Merging Ireland and USA
+result = pd.merge(Ireland,
+                 USA[['vaccine', 'location', 'total_vaccinations']],
+                 on='vaccine')
+result.head()
+
+
+
 # Iloc of Ireland and USA
 print(df.iloc[3552:3633, 2:3])
 print(df.iloc[6679:7084, 2:3])
@@ -56,6 +64,7 @@ df_usa = np.array(df[6679:7084])
 print(df_usa)
 
 
+
 # Ireland covid cases 2019-2020 to API
 payload = {'code': 'IE'}
 URL = 'https://api.statworx.com/covid'
@@ -64,7 +73,6 @@ response = requests.post(url=URL, data=json.dumps(payload))
 # Convert to data frame
 df_api = pd.DataFrame.from_dict(json.loads(response.text))
 print(df_api)
-
 
 #Bar graph added for Ireland data
 fig,ax = plt.subplots()
