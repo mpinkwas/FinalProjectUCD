@@ -54,8 +54,6 @@ print(df_ireland)
 df_usa = np.array(df[6679:7084])
 print(df_usa)
 
-
-
 # Ireland covid cases 2019-2020 to API
 payload = {'code': 'IE'}
 URL = 'https://api.statworx.com/covid'
